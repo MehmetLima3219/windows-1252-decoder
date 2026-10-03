@@ -1,0 +1,14 @@
+[project]
+name = "windows-1252-decoder"
+version = "0.1.0"
+description = "Decodes and encodes using the Windows-1252 character set, mapping all 256 code points to their Unicode equivalents."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
