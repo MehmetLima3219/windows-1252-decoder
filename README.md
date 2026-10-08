@@ -23,3 +23,10 @@ Some legacy data and tooling emit Windows-1252 bytes. Python's built-in `"cp1252
 - The five "undefined" bytes are mapped to control codes rather than U+FFFD. If your data uses those bytes as filler, you will get control characters in the output string.
 - `encode` rejects characters outside the Windows-1252 repertoire. Strip or replace them before calling if you need lossy conversion.
 - `decode` accepts `bytes` and `bytearray`; `encode` accepts `str`. Other types raise `TypeError`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
