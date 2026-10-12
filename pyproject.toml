@@ -1,6 +1,6 @@
 [project]
 name = "windows-1252-decoder"
-version = "0.1.0"
+version = "0.1.1"
 description = "Decodes and encodes using the Windows-1252 character set, mapping all 256 code points to their Unicode equivalents."
 requires-python = ">=3.10"
 dependencies = []
